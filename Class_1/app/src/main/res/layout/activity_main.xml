@@ -8,10 +8,10 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/login_button"
+        android:id="@+id/calculate_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/login"
+        android:text="@string/llogarit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,31 +19,55 @@
         />
 
     <EditText
-        android:id="@+id/password_edittext"
+        android:id="@+id/sum_edittext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="@+id/login_button"
-        app:layout_constraintEnd_toEndOf="@+id/login_button"
-        app:layout_constraintBottom_toTopOf="@+id/login_button"
-        android:hint="Password"/>
-    <EditText
-        android:id="@+id/email_edittext"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        app:layout_constraintStart_toStartOf="@+id/login_button"
-        app:layout_constraintEnd_toEndOf="@+id/login_button"
-        app:layout_constraintBottom_toTopOf="@+id/password_edittext"
-        android:hint="Email"/>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="8dp"
+        android:layout_marginTop="25dp"
+        android:hint="Shuma"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/email_edittext"/>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/time_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Koha"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/sum_edittext"
+        app:layout_constraintEnd_toEndOf="@+id/sum_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/sum_edittext"/>
+
+    <EditText
+        android:id="@+id/rate_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Interesi"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/sum_edittext"
+        app:layout_constraintEnd_toEndOf="@+id/sum_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/time_edittext"/>
+
+    <TextView
+        android:id="@+id/rate_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/sum_edittext"
+        app:layout_constraintEnd_toEndOf="@+id/sum_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/rate_edittext"
+        />
+
+    <TextView
+        android:id="@+id/total_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/rate_edittext"
+        app:layout_constraintEnd_toEndOf="@+id/sum_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/rate_textview"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
