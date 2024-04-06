@@ -16,16 +16,20 @@ class DetailsActivity : AppCompatActivity() {
         val surnameTextView = findViewById<TextView>(R.id.surname_textview)
         val phoneTextView = findViewById<TextView>(R.id.phone_textview)
         val birthdateTextView = findViewById<TextView>(R.id.birthdate_textview)
+        val emailTextView = findViewById<TextView>(R.id.email_textview)
         val callButton = findViewById<ImageButton>(R.id.call_button)
+        val emailButton = findViewById<ImageButton>(R.id.email_button)
 
         val name = intent.extras?.getString(KEY_NAME)
         val surname = intent.extras?.getString(KEY_SURNAME)
         val phone = intent.extras?.getString(KEY_PHONE)
+        val email = intent.extras?.getString(KEY_EMAIL)
         val birthdate = intent.extras?.getString(KEY_BIRTHDATE)
 
         nameTextView.text ="Emri: $name"
         surnameTextView.text= "Mbiemri: $surname"
         phoneTextView.text="Numri: $phone"
+        emailTextView.text="Email: $email"
         birthdateTextView.text="Ditelindja: $birthdate"
 
         callButton.setOnClickListener{
@@ -33,6 +37,14 @@ class DetailsActivity : AppCompatActivity() {
             dialIntent.data = Uri.parse("tel: $phone")
             startActivity(dialIntent)
 
+        }
+
+        emailButton.setOnClickListener {
+            val emailIntent = Intent(Intent.ACTION_SEND)
+            emailIntent.type = "message/rfc822"
+            emailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf(email))
+            emailIntent.data = Uri.parse("mailto:$email")
+            startActivity(emailIntent)
         }
     }
 }

@@ -44,6 +44,26 @@
         android:text="@string/call"
 
         />
+    <TextView
+        android:id="@+id/email_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_textview"
+        />
+
+    <ImageButton
+        android:id="@+id/email_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/baseline_abc_24"
+        app:layout_constraintTop_toBottomOf="@+id/call_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:text="@string/call"
+
+        />
 
     <TextView
         android:id="@+id/birthdate_textview"
@@ -51,7 +71,7 @@
         android:layout_height="16dp"
         android:layout_margin="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone_textview"
+        app:layout_constraintTop_toBottomOf="@+id/email_textview"
         />
 
     <Button

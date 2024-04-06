@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         val surnameEditText = findViewById<EditText>(R.id.surname_edittext)
         val phoneEditText = findViewById<EditText>(R.id.phone_edittext)
         val birthdateEditText = findViewById<EditText>(R.id.birthdate_edittext)
+        val emailEditText = findViewById<EditText>(R.id.email_edittext)
         val registerButton = findViewById<Button>(R.id.register_button)
 
         registerButton.setOnClickListener{
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra(KEY_NAME, nameEditText.text.toString())
             intent.putExtra(KEY_SURNAME, surnameEditText.text.toString())
             intent.putExtra(KEY_PHONE, phoneEditText.text.toString())
+            intent.putExtra(KEY_EMAIL, emailEditText.text.toString())
             intent.putExtra(KEY_BIRTHDATE, birthdateEditText.text.toString())
             startActivity(intent)
         }

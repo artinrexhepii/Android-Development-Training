@@ -10,4 +10,5 @@
     <string name="phone_textview">Phone:</string>
     <string name="call">Call</string>
     <string name="birthday_textview">Birthday:</string>
+    <string name="email">Email</string>
 </resources>
