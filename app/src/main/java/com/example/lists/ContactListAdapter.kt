@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ContactListAdapter(val contactList: List<Contact>): RecyclerView.Adapter<ContactListAdapter.ViewHolder>() {
-    class ViewHolder(view: View) :RecyclerView.ViewHolder(view) {
+class ContactListAdapter(val contactList: List<Contact>,val onClick: (Contact)-> Unit): RecyclerView.Adapter<ContactListAdapter.ViewHolder>() {
+    class ViewHolder(val view: View) :RecyclerView.ViewHolder(view) {
+
         val  initalsTextview = view.findViewById<TextView>(R.id.initials_textView)
         val  fullNameTextview = view.findViewById<TextView>(R.id.fullname_textView)
         val  phoneNumberTextview = view.findViewById<TextView>(R.id.phoneNumber_textView)
@@ -23,6 +24,9 @@ class ContactListAdapter(val contactList: List<Contact>): RecyclerView.Adapter<C
         holder.fullNameTextview.text = contactList[position].fullName
         holder.phoneNumberTextview.text = contactList[position].phoneNumber
         holder.initalsTextview.text = contactList[position].getInitials()
+        holder.view.setOnClickListener{
+            onClick(contactList[position])
+        }
     }
 
 
