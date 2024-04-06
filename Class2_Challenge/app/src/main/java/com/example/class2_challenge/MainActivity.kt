@@ -1,6 +1,10 @@
 package com.example.class2_challenge
 
+import android.content.Intent
 import android.os.Bundle
+import android.telecom.Call.Details
+import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,10 +15,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val nameEditText = findViewById<EditText>(R.id.name_edittext)
+        val surnameEditText = findViewById<EditText>(R.id.surname_edittext)
+        val phoneEditText = findViewById<EditText>(R.id.phone_edittext)
+        val birthdateEditText = findViewById<EditText>(R.id.birthdate_edittext)
+        val registerButton = findViewById<Button>(R.id.register_button)
+
+        registerButton.setOnClickListener{
+            val intent = Intent(this, DetailsActivity::class.java)
+            intent.putExtra(KEY_NAME, nameEditText.text.toString())
+            intent.putExtra(KEY_SURNAME, surnameEditText.text.toString())
+            intent.putExtra(KEY_PHONE, phoneEditText.text.toString())
+            intent.putExtra(KEY_BIRTHDATE, birthdateEditText.text.toString())
+            startActivity(intent)
+        }
         }
     }
-}
