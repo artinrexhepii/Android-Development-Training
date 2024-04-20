@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application3</string>
+    <string name="imageUrl">https://pbs.twimg.com/profile_images/1723986418920267776/37PA6iM__400x400.jpg</string>
+
+    <string name="imageUrl2">https://liveblog.digitalimages.sky/lc-images-sky/lcimg-8b6b8fe2-4e51-4f50-9eec-594e377572ad.jpeg</string>
+    <string name="imageUrl3">https://e3.365dm.com/22/11/2048x1152/skynews-liverpool-football-club_5957509.jpg</string>
+</resources>

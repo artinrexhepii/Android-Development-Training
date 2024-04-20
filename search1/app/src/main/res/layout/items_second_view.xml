@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/Second_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:text="@string/title"
+        tools:ignore="InvalidId"
+        app:layout_constraintTop_toBottomOf="@+id/Second_view"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/_15ee"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_title"
+        app:layout_constraintEnd_toEndOf="@+id/Second_view"
+        app:layout_constraintTop_toBottomOf="@+id/Second_view"
+        app:layout_constraintTop_toTopOf="@+id/text_title"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
